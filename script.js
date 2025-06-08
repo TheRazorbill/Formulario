@@ -95,4 +95,14 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 form.reset();
                 requiredInputs.forEach(input => input.classList.remove('is-valid', 'is-invalid'));
-                submitButton
+                submitButton.textContent = 'Enviar Dados';
+                submitButton.style.backgroundColor = '#5cb85c';
+                checkFormValidity();
+                
+                successMessage.style.opacity = '0';
+                successMessage.style.transform = 'translateY(-20px)';
+                successMessage.addEventListener('transitionend', () => successMessage.remove(), { once: true });
+            }, 3000);
+        }, 1500);
+    });
+});
